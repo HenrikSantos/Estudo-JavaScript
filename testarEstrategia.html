@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ex001</title>
+        <style>
+            body{
+                background-color: rgb(117, 117, 235);
+                color: white;
+                font: normal 25pt Arial;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- html -->
+        <h1>Olá, mundo!</h1>
+        <p>Já me livrei da maldição.</p>
+        
+        <!-- script -->
+        <script>
+
+            // program to get a random item from an array
+
+            function getRandomItem(arr) {
+            // get random index value
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            
+            // get random item
+            const item = arr[randomIndex];
+            return item;
+            }
+
+            let perdas = 0;
+            let ganhos = 0;
+            let banca = 1000;
+            let numeroTentativa = 1;
+            let ganhoPorRodada = 2.22;
+            let lucro = ganhoPorRodada;
+            let porcentagem = 0.87;
+            let aposta = ganhoPorRodada / porcentagem;
+            let result;
+            let rodada = 1;
+            let ganhoAtual = 0;
+            let totalGanhos = 0;
+            let totalPercas = 0;
+            let cont=1;
+            let resultado=1;
+
+            function jogar(){
+                const array = ['ganhou','perdeu'];
+                result = getRandomItem(array);
+                console.log(banca, ganhos, perdas, rodada, 'total ganhos:', totalGanhos,'total percas', totalPercas)
+                while(numeroTentativa != 3){
+                    if(result == 'ganhou'){
+                        ganhos++
+                        rodada++;
+                        ganhoAtual = aposta*porcentagem;
+                        totalGanhos = totalGanhos + ganhoAtual;
+                        banca = banca + (aposta*porcentagem);
+                        console.log('GANHOU: ', ganhoAtual,' Na rodada:', numeroTentativa, ' Banca atual: ', banca, 'rodada numero: ',rodada, 'ganhos:',ganhos);
+                        lucro = 2.22;
+                        aposta = lucro / porcentagem;
+                        numeroTentativa = 1;
+                        
+                        jogar();
+                    }
+                    if(result == 'perdeu'){
+                        totalPercas = totalPercas+aposta;
+                        perdas ++;
+                        banca=banca-aposta;
+                        numeroTentativa++;
+                        rodada++;
+                        console.log('PERDEU: ', aposta,' Na rodada:', numeroTentativa, ' Banca atual: ', banca, 'rodada numero: ',rodada, 'perdas: ',perdas);
+                        lucro=aposta+lucro;
+                        aposta=lucro/porcentagem;
+                        if(numeroTentativa == 5){
+                            return banca, ganhos, perdas, totalGanhos, totalPercas;
+                        }
+
+                        jogar();
+                    }
+                }
+            }
+            while(cont!= 7){
+                resultado = jogar();
+                console.log(resultado);
+                cont++;
+                jogar()
+            }
+            </script>
+        </body>
+    </html>

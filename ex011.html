@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex011</title>
+    <style>
+        body{
+            background-color: rgb(117, 117, 235);
+            color: white;
+            font: normal 25pt Arial;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Exercício 11</h1>
+
+    Em que país você mora? <input type="text" id="txtpais" name="txtpais">
+    <input type="button" value="Verificar" id="verificar">
+    <div id="res">
+
+    </div>
+    <script>
+        var verificar = window.document.querySelector('#verificar')
+        verificar.addEventListener('click',nacionalidade)
+        var res = window.document.querySelector('#res')
+        var txtpais = window.document.querySelector('#txtpais')
+        function nacionalidade(){
+            var nascimento = txtpais.value
+            console.log(nascimento)
+            res.innerHTML += `<p>Você nasceu em ${txtpais.value}</p>`
+            if(txtpais.value == 'Brasil'){
+                res.innerHTML += `<p>Você é Brasileiro</p>`
+            }else{
+                res.innerHTML += `<p>'Você é estrangeiro!'</p>`
+            }
+        }
+    </script>
+</body>
+</html>

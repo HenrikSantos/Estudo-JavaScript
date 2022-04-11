@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(64, 105, 230);
+    font: normal 15px Arial;
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.609);
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+    margin-top: 100px;
+}
+p{
+    margin: 4px;
+    padding: 4px;
+    border: solid 1px;
+    border-radius: 3px;
+    background-color: rgba(115, 115, 115, 0.318);
+    padding-left: 10px;
+    
+}
+p:hover{
+    background-color: rgba(255, 255, 255, 0.318);
+}
+#botaoGerarNumero, #botaoAdicionar{
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.318);
+    border: solid 1px;
+    background-color: rgba(209, 209, 209, 0.323);
+    margin-left: 5px;
+    width: 100%;
+}
+#botaoGerarNumero:hover, #botaoAdicionar:hover{
+    background-color: rgba(255, 255, 255, 0.512);
+}

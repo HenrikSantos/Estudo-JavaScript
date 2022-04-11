@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex005</title>
+    <style>
+        body{
+            background-color: rgb(117, 117, 235);
+            color: white;
+            font: normal 25pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="teste">Exercício 05</h1>
+    <p>Aqui vai o resultado</p>
+    <div> 
+        <p>Clique <strong>em</strong> mim!</p>
+    </div>
+    <p id="porID">porID</p>
+    <p name="porName">porName</p>
+    <p class="porClasse">porClasse</p>
+    <p class="porClasse">porClasse</p>
+    <p id="querrySelectorTeste">por querrySelector</p>
+    <p class="querySelectorTesteClasse">por querrySelectorClasse</p>
+    <p class="querySelectorTesteClasse">por querrySelectorClasse</p>
+    
+    <script>
+        var p1  = window.document.getElementsByTagName('p')[1]
+        document.write('teste 1:'+ p1.innerText);
+        p1.style.color = 'black';
+
+        document.write('<br><br> teste 2: ' + p1.innerHTML)
+
+        var porID = window.document.getElementById('porID')
+        porID.innerText = 'teste porID';
+
+        var porName = window.document.getElementsByName('porName')[0]
+        porName.innerText = 'teste porName';
+
+        var porClasse = window.document.getElementsByClassName('porClasse')[0]
+        porClasse.innerText = 'teste porClasse';
+
+        var querrySelector = window.document.querySelector('p#querrySelectorTeste')
+        querrySelector.innerText = 'teste querrySelector por ID'
+
+        var querySelectorClasse = window.document.querySelectorAll('.querySelectorTesteClasse')
+        querySelectorClasse.innerText = 'teste querySelector por classe'
+
+    </script>
+</body>
+</html>
