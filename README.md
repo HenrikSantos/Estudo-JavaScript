@@ -1,2 +1,2 @@
 # Estudo JavaScript
- Alguns xercícios JavaScript
+ Alguns exercícios de JavaScript
